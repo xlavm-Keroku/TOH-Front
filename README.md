@@ -13,7 +13,7 @@ https://angular-tourofhero-frontapi.herokuapp.com/
 
 ### Flow of Deploy
 
-![Angular Deploy](screen/angulardeploy.jpg)
+![Angular Deploy](screenshots/angulardeploy.jpg)
 
 
 ## DevEnv Version
