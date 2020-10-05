@@ -8,7 +8,7 @@ import Hero from './hero_model';
 })
 export class HeroService {
 
-  uri = 'http://localhost:3000/hero';
+  uri = 'https://angular-tourofhero-backapi.herokuapp.com/hero';
 
 
   constructor(private http: HttpClient) { }

@@ -9,7 +9,7 @@ import  Hero  from './hero_model';
 export class HeroSearchService {
   constructor(private http: HttpClient) {}
 
-  uri = 'http://localhost:3000/hero';
+  uri = 'https://angular-tourofhero-backapi.herokuapp.com/hero';
 
   search(term: string): Observable<Hero[]> {
 
