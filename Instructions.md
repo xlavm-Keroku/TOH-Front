@@ -26,3 +26,5 @@ app.get('*', function(req,res) {
 app.listen(process.env.PORT || 8080);
 ```
 
+Additional, copy the dependencies of `DevDependencies` and paste in `Dependencies`. all this into package.json
+
