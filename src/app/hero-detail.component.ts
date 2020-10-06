@@ -27,7 +27,7 @@ export class HeroDetailComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
         this.navigated = true;
-        this.heroService.editHero(params['id'])
+        this.heroService.getHero(params['id'])
           .subscribe((data: Hero) => {
             this.hero = data;
           });
@@ -40,7 +40,7 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     this.route.params.forEach((params: Params) => {
-    this.heroService.save(params['id'], this.hero).subscribe(hero => {
+    this.heroService.save(this.hero).subscribe(hero => {
       this.heroe = hero; // saved hero, w/ id if new
       this.goBack(hero);
     }, error => (this.error = error)); // TODO: Display error message

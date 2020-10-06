@@ -1,7 +1,6 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Hero from './hero_model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,36 +8,26 @@ import Hero from './hero_model';
 export class HeroService {
 
   uri = 'https://angular-tourofhero-backapi.herokuapp.com/hero';
+  //uri = 'http://localhost:3000/hero';
 
 
   constructor(private http: HttpClient) { }
 
-  addHero(name) {
-    const obj = {
-
-      name: name
-
-    };
-    console.log(obj);
-    this.http.post(`${this.uri}/add`, obj)
+  addHero(hero) {
+    this.http.post(`${this.uri}/add`, hero)
       .subscribe(res => console.log('Done'));
   }
 
-  getHero() {
+  getHeroes() {
     return this.http.get(`${this.uri}`);
   }
 
-  editHero(id) {
-    return this.http.get(`${this.uri}/edit/${id}`);
+  getHero(id) {
+    return this.http.get(`${this.uri}/read/${id}`);
   }
 
-  updateHero(name, id) {
-    const obj = {
-
-      name: name
-
-    };
-    this.http.post(`${this.uri}/update/${id}`, obj)
+  updateHero(hero) {
+    this.http.post(`${this.uri}/update/${hero._id}`, hero)
       .subscribe(res => console.log('Done'));
   }
 
@@ -46,18 +35,11 @@ export class HeroService {
     return this.http.get(`${this.uri}/delete/${id}`);
   }
 
-  save(id,hero: Hero) {
-    if (id) {
-      const obj = {
-        name: hero.name
-      };
-      return this.http.post(`${this.uri}/update/${id}`, obj);
+  save(hero) {
+    if (hero._id) {
+      return this.http.post(`${this.uri}/update/${hero._id}`, hero);
     }
-    const obj = {
-      name: hero.name
-    };
-    console.log(obj);
-    return this.http.post(`${this.uri}/add`, obj);
+    return this.http.post(`${this.uri}/add`, hero);
   }
 
 }

@@ -17,7 +17,7 @@ import { HeroSearchService } from './hero-search.service';
   providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  heroes: Observable<Object>;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -25,8 +25,11 @@ export class HeroSearchComponent implements OnInit {
     private router: Router
   ) {}
 
+  termPublic;
+
   search(term: string): void {
     // Push a search term into the observable stream.
+    this.termPublic = term;
     this.searchTerms.next(term);
   }
 
@@ -38,9 +41,9 @@ export class HeroSearchComponent implements OnInit {
         term =>
           term // switch to new observable each time
             ? // return the http search observable
-              this.heroSearchService.search(term)
+              this.heroSearchService.searchHeroes(term)
             : // or the observable of empty heroes if no search term
-              of<Hero[]>([])
+              of<Object>([])
       ),
       catchError(error => {
         // TODO: real error handling
@@ -50,8 +53,8 @@ export class HeroSearchComponent implements OnInit {
     );
   }
 
-  gotoDetail(hero: Hero): void {
-    const link = ['/detail', hero.name];
+  gotoDetail(hero): void {
+    const link = ['/detail', hero._id];
     this.router.navigate(link);
   }
 }
