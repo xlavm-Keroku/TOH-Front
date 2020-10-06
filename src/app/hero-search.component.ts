@@ -25,11 +25,8 @@ export class HeroSearchComponent implements OnInit {
     private router: Router
   ) {}
 
-  termPublic;
-
   search(term: string): void {
     // Push a search term into the observable stream.
-    this.termPublic = term;
     this.searchTerms.next(term);
   }
 

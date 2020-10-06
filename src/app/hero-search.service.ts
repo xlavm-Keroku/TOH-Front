@@ -12,7 +12,6 @@ export class HeroSearchService {
   //uri = 'http://localhost:3000/hero';
 
   searchHeroes(term): Observable<Object> {
-    console.log(name);//ver error
     return this.http.get(`${this.uri}/search/${term}`);
   }
 

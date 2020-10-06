@@ -3,7 +3,7 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero._id, hero)" [class.selected]="hero === selectedHero">
     <span class="hero-element">
-      <span class="badge">{{hero._id.substring(0,2)}}</span> {{hero.name}}
+      <span class="badge">{{hero._id.substring(15,17)}}</span> {{hero.name}}
     </span>
     <button class="delete-button" (click)="deleteHero(hero._id, $event)">Delete</button>
   </li>
