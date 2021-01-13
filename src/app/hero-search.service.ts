@@ -8,7 +8,7 @@ import { Observable, throwError as observableThrowError } from 'rxjs';
 export class HeroSearchService {
   constructor(private http: HttpClient) {}
 
-  uri = 'https://angular-tourofhero-backapi.herokuapp.com/hero';
+  uri = 'https://toh-back-api.herokuapp.com/hero';
   //uri = 'http://localhost:3000/hero';
 
   searchHeroes(term): Observable<Object> {

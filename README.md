@@ -7,13 +7,13 @@ Contain the web app Tour Of Hero of Angular with connection to backend en NodeJS
 
 ## App Deploy in Heroku
 
-https://angular-tourofhero-frontapi.herokuapp.com/
+https://toh-front-app.herokuapp.com/
 
 >The deploy is automatic from a pipeline.
 
 ### Flow of Deploy
 
-![Angular Deploy](screenshots/angulardeploy.jpg)
+![Angular Deploy](docs/angulardeploy.jpg)
 
 
 ## DevEnv Version

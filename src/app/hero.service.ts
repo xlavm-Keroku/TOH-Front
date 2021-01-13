@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeroService {
 
-  uri = 'https://angular-tourofhero-backapi.herokuapp.com/hero';
+  uri = 'https://toh-back-api.herokuapp.com/hero';
   //uri = 'http://localhost:3000/hero';
 
 
