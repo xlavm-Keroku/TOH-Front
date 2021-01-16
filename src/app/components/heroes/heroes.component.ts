@@ -23,8 +23,7 @@ export class HeroesComponent implements OnInit {
     this.heroService
       .getHeroes()
       .subscribe(
-        (heroes: Hero[]) => (this.heroes = heroes),
-        error => (this.error = error)
+        (heroes: Hero[]) => (this.heroes = heroes)
       )
   }
 
@@ -43,7 +42,7 @@ export class HeroesComponent implements OnInit {
   deleteHero(id, event: any): void {
     event.stopPropagation();
     this.heroService.deleteHero(id).subscribe(res => {
-      console.log(res);
+      alert(res),
       this.ngOnInit();
     });
   }

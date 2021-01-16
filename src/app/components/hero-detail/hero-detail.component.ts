@@ -40,10 +40,10 @@ export class HeroDetailComponent implements OnInit {
 
   save(): void {
     this.route.params.forEach((params: Params) => {
-    this.heroService.save(this.hero).subscribe(hero => {
-      this.heroe = hero; // saved hero, w/ id if new
-      this.goBack(hero);
-    }, error => (this.error = error)); // TODO: Display error message
+    this.heroService.save(this.hero).subscribe(res => {
+      alert(res),
+      this.goBack(this.hero);
+    }); // TODO: Display error message
   });
   }
 

@@ -1,6 +1,5 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError as observableThrowError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +10,8 @@ export class HeroSearchService {
   uri = 'https://toh-back-api.herokuapp.com/api/v1/hero';
   //uri = 'http://localhost:3000/hero';
 
-  searchHeroes(term): Observable<Object> {
+  searchHeroe(term) {
     return this.http.get(`${this.uri}/search/${term}`);
   }
 
-  private handleError(res: HttpErrorResponse) {
-    console.error(res.error);
-    return observableThrowError(res.error || 'Server error');
-  }
 }

@@ -14,8 +14,7 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   addHero(hero) {
-    this.http.post(`${this.uri}/`, hero)
-      .subscribe(res => console.log('Done'));
+    return this.http.post(`${this.uri}/`, hero);
   }
 
   getHeroes() {
@@ -27,8 +26,7 @@ export class HeroService {
   }
 
   updateHero(hero) {
-    this.http.put(`${this.uri}/${hero._id}`, hero)
-      .subscribe(res => console.log('Done'));
+    return this.http.put(`${this.uri}/${hero._id}`, hero);
   }
 
   deleteHero(id) {
