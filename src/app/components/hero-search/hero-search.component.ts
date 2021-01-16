@@ -7,16 +7,18 @@ import {
   distinctUntilChanged,
   switchMap
 } from 'rxjs/operators';
-import  Hero  from './hero_model';
-import { HeroSearchService } from './hero-search.service';
+import  Hero  from '../../models/hero.model';
+import { HeroSearchService } from '../../services/hero-search.service';
+
 
 @Component({
-  selector: 'my-hero-search',
+  selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
   styleUrls: ['./hero-search.component.css'],
   providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
+
   heroes: Observable<Object>;
   private searchTerms = new Subject<string>();
 

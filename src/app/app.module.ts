@@ -1,31 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { DashboardsComponent } from './components/dashboards/dashboards.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { HeroService } from './services/hero.service';
+import { HeroSearchService } from './services/hero-search.service';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HeroService } from './hero.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroSearchComponent } from './hero-search.component';
-
 @NgModule({
+  declarations: [
+    AppComponent,
+    DashboardsComponent,
+    HeroesComponent,
+    HeroSearchComponent,
+    HeroDetailComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-  ],
-  providers: [HeroService],
+  providers: [HeroService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
