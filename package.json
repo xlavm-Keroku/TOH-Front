@@ -1,10 +1,11 @@
 {
   "name": "angular-tour-of-heroes",
+  "author": "Luis Angel Vanegas Martinez",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
