@@ -1,9 +1,8 @@
 # Angular-TourOfHeroes-Front
-Contain the web app Tour Of Hero of Angular with connection to backend en NodeJS
+Tour of Hero --- Angular + Node js
 
 * [Angular Basic Tutorial](https://angular.io/tutorial) 
 
-> Arquetipo de API de Angular Generado Automaticamente
 
 ## App Deploy in Heroku
 
@@ -16,12 +15,6 @@ https://toh-front-app.herokuapp.com/
 ![Angular Deploy](docs/angulardeploy.jpg)
 
 
-## DevEnv Version
-
-* Angular CLI: 9.0.7
-* Node: 12.16.1
-* OS: win10 x64
-
 ## Initial Config
 
 Clone and run `npm install` inside of angular project folder 
@@ -30,14 +23,6 @@ Clone and run `npm install` inside of angular project folder
 
 Run `npm start` command and navigate to `http://localhost:4200/`
 
-## Run unit tests
-
-Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Run end-to-end tests
-
-Run `npm e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `npm start`.
 
 ## Bugs
 
