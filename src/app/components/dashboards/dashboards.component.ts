@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { HeroService } from '../../services/hero.service';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { HeroService } from '../../services/hero.service'
 
 @Component({
   selector: 'app-dashboards',
@@ -9,21 +8,21 @@ import { HeroService } from '../../services/hero.service';
   styleUrls: ['./dashboards.component.css']
 })
 export class DashboardsComponent implements OnInit {
-  
-  heroes:  any;
+
+  heroes
 
   constructor(
     private router: Router,
     private heroService: HeroService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes)
   }
 
-  gotoDetail(id): void {
-    const link = ['/detail', id];
-    this.router.navigate(link);
+  gotoDetail(id) {
+    const link = ['/detail', id]
+    this.router.navigate(link)
   }
 }

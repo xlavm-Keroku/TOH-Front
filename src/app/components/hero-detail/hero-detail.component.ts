@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import Hero from '../../models/hero.model';
-import { HeroService } from '../../services/hero.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { ActivatedRoute, Params } from '@angular/router'
+import { HeroService } from '../../services/hero.service'
 
 @Component({
   selector: 'app-hero-detail',
@@ -9,48 +8,45 @@ import { HeroService } from '../../services/hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
- 
-  @Input() hero: Hero;
-  heroe: any = {};
-  @Output() close = new EventEmitter();
-  dataadded = false;
-  msg: String ;
-  error: any;
-  navigated = false; // true if navigated here
+
+  @Input() hero
+  heroe
+  @Output() close = new EventEmitter()
+  dataadded = false
+  error
+  navigated = false // true if navigated here
 
   constructor(
     private heroService: HeroService,
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
-        this.navigated = true;
+        this.navigated = true
         this.heroService.getHero(params['id'])
-          .subscribe((data: Hero) => {
-            this.hero = data;
-          });
+          .subscribe(data => this.hero = data)
       } else {
-        this.navigated = false;
-        this.hero = new Hero();
+        this.navigated = false
+        this.hero = new Object
       }
-    });
+    })
   }
 
-  save(): void {
+  save() {
     this.route.params.forEach((params: Params) => {
-    this.heroService.save(this.hero).subscribe(res => {
-      alert(res),
-      this.goBack(this.hero);
-    }); // TODO: Display error message
-  });
+      this.heroService.save(this.hero).subscribe(res => {
+        alert(res),
+          this.goBack(this.hero)
+      })
+    })
   }
 
-  goBack(savedHero: any = {} = null): void {
-    this.close.emit(savedHero);
+  goBack(savedHero) {
+    this.close.emit(savedHero)
     if (this.navigated) {
-      window.history.back();
+      window.history.back()
     }
   }
 }

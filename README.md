@@ -15,13 +15,29 @@ https://toh-front-app.herokuapp.com/
 ![Angular Deploy](docs/angulardeploy.jpg)
 
 
-## Initial Config
+-----------------------
+## Configuration Initial [Local]
 
-Clone and run `npm install` inside of angular project folder 
+1. Modify the `src/environments/environment.ts` with this:
+```
+  URI_BACK: "your route for API Back"
+  // example: URI_BACK: "https://toh-back-api.herokuapp.com/api/v1/hero"
+  // example: URI_BACK: "http://localhost:3000/api/v1/hero"
+```
 
-## Run project 
+-----------------------
+## Executing the API [Local]
+1. Execute into the API
+    ```
+    npm install
+    ```
+2. Next, execute
+    ```
+    ng serve
+    ```
+3. Open [http://localhost:4200/](http://localhost:4200/) in you browser.
 
-Run `npm start` command and navigate to `http://localhost:4200/`
+
 
 
 ## Bugs

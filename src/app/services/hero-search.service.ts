@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
+import { environment } from 'environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +8,11 @@ import { Injectable } from '@angular/core';
 export class HeroSearchService {
   constructor(private http: HttpClient) {}
 
-  uri = 'https://toh-back-api.herokuapp.com/api/v1/hero';
-  //uri = 'http://localhost:3000/hero';
+  uri = environment.URI_BACK  
 
   searchHeroe(term) {
-    return this.http.get(`${this.uri}/search/${term}`);
+    return this.http.get(`${this.uri}/search/${term}`)
   }
+
 
 }

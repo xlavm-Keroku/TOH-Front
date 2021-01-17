@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import  Hero  from '../../models/hero.model';
-import { HeroService } from '../../services/hero.service';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { HeroService } from '../../services/hero.service'
 
 @Component({
   selector: 'app-heroes',
@@ -9,55 +8,53 @@ import { HeroService } from '../../services/hero.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  
-  heroes: Hero[];
-  selectedHero: Hero;
-  id;
-  addingHero = false;
-  error: any;
-  showNgFor = false;
 
-  constructor(private router: Router, private heroService: HeroService) {}
+  heroes
+  selectedHero
+  id
+  addingHero = false
+  error
+  showNgFor = false
 
-  getHeroes(): void {
-    this.heroService
-      .getHeroes()
-      .subscribe(
-        (heroes: Hero[]) => (this.heroes = heroes)
-      )
+  constructor(private router: Router, private heroService: HeroService) { }
+
+  getHeroes() {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes)
   }
 
-  addHero(): void {
-    this.addingHero = true;
-    this.selectedHero = null;
+  addHero() {
+    this.addingHero = true
+    this.selectedHero = null
   }
 
-  close(savedHero: Hero): void {
-    this.addingHero = false;
+  close(savedHero) {
+    this.addingHero = false
     if (savedHero) {
-      this.getHeroes();
+      this.getHeroes()
     }
   }
 
-  deleteHero(id, event: any): void {
-    event.stopPropagation();
-    this.heroService.deleteHero(id).subscribe(res => {
-      alert(res),
-      this.ngOnInit();
-    });
+  deleteHero(id, event) {
+    event.stopPropagation()
+    this.heroService.deleteHero(id)
+      .subscribe(res => (
+        alert(res),
+        this.ngOnInit()
+      ))
   }
 
-  ngOnInit(): void {
-    this.getHeroes();
+  ngOnInit() {
+    this.getHeroes()
   }
 
-  onSelect(id, hero:Hero): void {
-    this.id=id
-    this.selectedHero = hero;
-    this.addingHero = false;
+  onSelect(id, hero) {
+    this.id = id
+    this.selectedHero = hero
+    this.addingHero = false
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.id]);
+  gotoDetail() {
+    this.router.navigate(['/detail', this.id])
   }
 }
