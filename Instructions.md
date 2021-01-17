@@ -2,7 +2,16 @@
 
 is necessary to modify the archive package.json
 ```
-"start": "node server.js",
+"start": "node server.js"
+"postinstall": "ng build --prod"
+```
+
+in the end of file package.json, add:
+```
+  "engines": {
+	  "node": "10.14.2",
+    "npm": "6.4.1"
+  }
 ```
 
 and you to create the file server.js with:
@@ -25,6 +34,3 @@ app.get('*', function(req,res) {
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
 ```
-
-Additional, copy the dependencies of `DevDependencies` and paste in `Dependencies`. all this into package.json
-
