@@ -16,7 +16,7 @@ https://toh-front-app.herokuapp.com/
 
 
 -----------------------
-## Configuration Initial [Local]
+## Initial Configuration [Local]
 
 1. Modify the `src/environments/environment.ts` with this:
 ```
@@ -26,7 +26,7 @@ https://toh-front-app.herokuapp.com/
 ```
 
 -----------------------
-## Executing the API [Local]
+## API Execution [Local]
 1. Execute into the API
     ```
     npm install
