@@ -32,4 +32,4 @@ COPY . /app
 EXPOSE 4200
 
 # start app
-RUN ng serve 
+CMD ng serve --host 0.0.0.0 --port 4200 --public-host http://localhost --disableHostCheck --configuration=production
