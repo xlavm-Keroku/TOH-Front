@@ -3,6 +3,9 @@ FROM node:10-alpine
 
 USER root
 
+# create folder working
+RUN mkdir /app
+
 # set working directory
 WORKDIR /app
 
@@ -29,4 +32,4 @@ COPY . /app
 EXPOSE 4200
 
 # start app
-RUN node server.js
+RUN ng serve 
